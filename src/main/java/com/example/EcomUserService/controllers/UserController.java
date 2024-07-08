@@ -1,17 +1,16 @@
 package com.example.EcomUserService.controllers;
 
-import com.example.EcomUserService.models.User;
+import com.example.EcomUserService.dtos.LoginRequestDTO;
+import com.example.EcomUserService.dtos.SignUpRequestDTO;
+import com.example.EcomUserService.dtos.UserResponseDTO;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/user")
 public class UserController {
     @PostMapping("/login")
-    public ResponseEntity login(){
+    public ResponseEntity<UserResponseDTO> login(@RequestBody LoginRequestDTO loginRequestDTO){
         return null;
     }
 
@@ -21,7 +20,7 @@ public class UserController {
     }
 
     @PostMapping("/signUp")
-    public ResponseEntity login(User user){
+    public ResponseEntity<UserResponseDTO> login(@RequestBody SignUpRequestDTO signUpRequestDTO){
         return null;
     }
 
