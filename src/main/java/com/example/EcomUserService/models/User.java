@@ -19,4 +19,5 @@ public class User extends BaseModel{
     private String password;
     @ManyToMany
     private List<Role> roles;
+    private String token;
 }
