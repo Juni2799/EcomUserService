@@ -1,5 +1,6 @@
 package com.example.EcomUserService.mappers;
 
+import com.example.EcomUserService.dtos.RoleRequestDTO;
 import com.example.EcomUserService.dtos.RoleResponseDTO;
 import com.example.EcomUserService.models.Role;
 import org.mapstruct.Mapper;
@@ -14,4 +15,8 @@ public interface RoleMapper {
     @Mapping(target = "roleName", source = "roleResponseDTO.role")
     @Mapping(target = "description", source = "roleResponseDTO.desc")
     Role RoleResponseDtoToRole(RoleResponseDTO roleResponseDTO);
+
+    @Mapping(target = "roleName", source = "roleRequestDTO.roleName")
+    @Mapping(target = "description", source = "roleRequestDTO.description")
+    Role RoleRequestDtoToRole(RoleRequestDTO roleRequestDTO);
 }
